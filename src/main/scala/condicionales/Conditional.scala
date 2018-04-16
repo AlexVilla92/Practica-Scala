@@ -23,6 +23,13 @@ object Conditional {
       case 4 => "april";
       case _ => "invalid value";
     })
+
+    var k = 0;
+    while (k < 10) {
+      println(s"k vale: $k");//interpolacion de caracteres
+      k = k + 1;
+    }
+    //el do while funciona igual que siempre
   }
 
 }
