@@ -27,5 +27,31 @@ object Worksheet {
   frutas.map{ unaFruta => unaFruta.toUpperCase}
   //lista con longitud de cada elemento
   frutas.map{ _.length}
-  
+
+  //faltten, plancha las listas
+  val lista = List(List(1,2,3), List(4,5,6), List(7,8,9));
+  lista.flatten;
+
+  //multiplicar por 2 cada elemento y luego los plancho
+  lista.map {( x: List[Int]) => x.map { n => n * 2}}.flatten;
+
+  //lo mismo pero usando flatMap
+  lista.flatMap {( x: List[Int]) => x.map { n => n * 2}}
+
+  //armo una lista de lista, parecido a tuplas
+  numeros.map { x => List(x, x * 2)}
+
+  //con flatMap lo plancho
+  numeros.flatMap { x => List(x, x * 2)}
+
+  //con cadenas, plancho todos los caracteres, y elimino los repetidos
+  frutas.flatMap { c => c.toUpperCase()}.distinct
+
+  //conjuntos
+  val conjunto = Set(1,2,3,4,5);
+  conjunto.contains(3);
+  conjunto.contains(23);
+  val conjunto2 = conjunto + 6;
+  conjunto2
+  //intersection &, union |, diferencia con diff
 }
